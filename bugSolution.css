@@ -1,0 +1,19 @@
+The solution involves using the `!important` flag to enforce the `color: green` rule.  This should only be used as a last resort, however, as it can lead to maintainability issues. A better long-term solution may involve restructuring the CSS or adjusting selector specificity to avoid the conflict.
+
+```css
+div {
+  color: blue;
+}
+
+p {
+  color: red;
+}
+
+div p {
+  color: green !important; /* Using !important to override inheritance */
+}
+
+div p.special {
+  color: purple;
+}
+```
